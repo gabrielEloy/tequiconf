@@ -1,0 +1,10 @@
+.wrapper {
+    position: relative;
+}
+
+
+.split-text {
+    top: 0;
+    position: absolute;
+    z-index: -1;
+}

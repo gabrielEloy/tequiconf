@@ -1,0 +1,78 @@
+.hero-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: inherit;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.hero-globe {
+  position: absolute;
+  z-index: -1;
+  bottom: 120px;
+}
+
+.hero-grid {
+  position: absolute;
+  bottom: -200px;
+  left: -400px;
+  width: 1200px;
+  height: 400px;
+  z-index: -2;
+}
+
+.video {
+  width: 500px;
+  height: 500px;
+}
+
+.statue-man {
+  width: 40%;
+  position: absolute;
+  left: -5%;
+  bottom: -15%;
+}
+.statue-woman {
+  width: 45%;
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+}
+
+@media screen and (max-width: 1000px) {
+  .statue-man {
+    bottom: -10%;
+  }
+}
+@media screen and (max-width: 756px) {
+  .statue-man {
+    left: -15%;
+    bottom: -8%;
+    width: 50%;
+  }
+  .statue-woman {
+    right: -15%;
+    bottom: -5%;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .statue-man {
+    left: 12%;
+    top: 10%;
+    width: 40%;
+  }
+  .statue-woman {
+    right: 12%;
+    top: 10%;
+    width: 40%;
+  }
+}
