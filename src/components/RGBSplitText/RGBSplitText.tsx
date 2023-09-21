@@ -6,6 +6,7 @@ type Props = {
   splitColors?: [string, string];
   displacement?: number;
   style?: React.CSSProperties;
+  onClick?: () => void;
 };
 
 const RGBSplitText = ({
@@ -13,11 +14,12 @@ const RGBSplitText = ({
   splitColors = ["#02FFFF", "#FF32FF"],
   displacement = 1,
   style,
+  onClick,
 }: Props) => {
   const upperCaseText = children.toUpperCase();
 
   return (
-    <div className={styles["wrapper"]}>
+    <div onClick={onClick} className={styles["wrapper"]}>
       <p
         style={{
           ...style,

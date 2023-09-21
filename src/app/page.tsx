@@ -11,6 +11,9 @@ const Home = () => {
         <Canvas />
         <Hero />
       </div>
+      {/* <div className={styles['info']}>
+        heeey
+      </div> */}
     </div>
   );
 };

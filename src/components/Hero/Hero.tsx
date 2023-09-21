@@ -4,6 +4,7 @@ import Globe from "../SVG/Globe";
 import Grid from "../SVG/Grid";
 import PopUp from "../PopUp/PopUp";
 import RGBSplitText from "../RGBSplitText/RGBSplitText";
+import { Button } from "../Button/Button";
 
 type Props = {};
 
@@ -32,6 +33,34 @@ const Hero = (props: Props) => {
           </PopUp>
         </div>
         <img className={styles["statue-woman"]} src="/statue-woman.png" />
+        <RGBSplitText
+          style={{
+            marginTop: 35,
+            fontSize: 25,
+          }}
+        >
+          11/11/2023
+        </RGBSplitText>
+        <RGBSplitText
+          style={{
+            cursor: "pointer",
+            marginTop: 15,
+            fontSize: 12,
+            textDecoration: "underline",
+          }}
+          onClick={() => alert("test")}
+        >
+          FAE Centro Universitário - Curitiba
+        </RGBSplitText>
+
+        <Button
+          style={{ marginTop: 35 }}
+          onClick={() => alert("garantiu a vaga")}
+        >
+          <RGBSplitText style={{ cursor: "pointer" }}>
+            Garanta sua vaga
+          </RGBSplitText>
+        </Button>
       </div>
     </div>
   );

@@ -5,8 +5,6 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh; */
-  height: 100vh;
-  overflow: hidden;
 }
 
 .popup-window {
@@ -36,7 +34,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
 }
 
 .hero-globe {
@@ -63,4 +60,10 @@
 .hero-container {
   height: 100vh;
   overflow: hidden;
+}
+
+
+.info{
+  height: 100vh;
+  background-color: red;
 }
