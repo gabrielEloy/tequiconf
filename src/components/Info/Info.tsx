@@ -22,10 +22,7 @@ const Info = (props: Props) => {
           Tudo isso somado a um ambiente todo pensando para você conhecer outros
           profissionais incríveis e trocar experiências com eles
         </Text>
-        <RGBSplitText>
-          Venha conosco e desfrute o melhor dos profissionais de tecnologia de
-          Curitiba
-        </RGBSplitText>
+        <RGBSplitText>Vamos juntos acelerar sua carreira</RGBSplitText>
       </Card>
     </div>
   );
