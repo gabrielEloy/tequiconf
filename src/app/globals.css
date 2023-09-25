@@ -32,21 +32,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
 
-    --primary-glow: linear-gradient(90deg, #301f2f, #06292b);
-    --secondary-glow: linear-gradient(90deg, #301f2f, #06292b);
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: linear-gradient(90deg, #301f2f, #06292b);
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
   }
 }
 
@@ -66,7 +52,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(90deg, #301f2f, #06292b);
+  background: #000;
 }
 
 a {
