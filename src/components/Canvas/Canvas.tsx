@@ -16,7 +16,6 @@ type Props = {};
 export const Canvas = (props: Props) => {
   const mountRef = useRef(null);
 
-  console.log({ mountRef });
   useLayoutEffect(() => {
     /**
      * Base
