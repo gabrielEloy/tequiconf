@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./hero.module.css";
-import Globe from "../SVG/Globe";
-import Grid from "../SVG/Grid";
 import PopUp from "../PopUp/PopUp";
 import RGBSplitText from "../RGBSplitText/RGBSplitText";
 import { Button } from "../Button/Button";
