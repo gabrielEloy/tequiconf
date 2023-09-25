@@ -19,7 +19,7 @@ export default async function Image() {
       // ImageResponse JSX element
       <img
         style={{ width: 1200, height: 630 }}
-        src={"open-graph.png"}
+        src={'/open-graph.png'}
         alt="Tequiconf"
       />
     ),
