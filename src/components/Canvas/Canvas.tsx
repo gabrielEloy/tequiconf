@@ -1,6 +1,5 @@
 "use client";
 
-import * as dat from "lil-gui";
 import * as THREE from "three";
 import { useRef, useEffect, useLayoutEffect } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -23,10 +22,7 @@ export const Canvas = (props: Props) => {
      * Base
      */
     // Debug
-    const gui = new dat.GUI();
-    const isDesktopSize = window.innerWidth > 480;
 
-    gui.hide();
 
     // Canvas
     const canvas = document.querySelector("canvas.webgl") as HTMLElement;
@@ -74,25 +70,10 @@ export const Canvas = (props: Props) => {
     scene.add(plane);
     scene.add(plane2);
 
-    gui
-      .add(material, "displacementScale")
-      .min(0)
-      .max(5)
-      .step(0.001)
-      .name("Terrain intensity");
-    gui.add(material, "metalness", 0, 1, 0.0001).name("Material metalness");
-    gui.add(material, "roughness", 0, 1, 0.0001).name("Material roughness");
 
     // Lights
     const ambientLight = new THREE.AmbientLight("#d06262", 13.626);
     scene.add(ambientLight);
-    gui
-      .add(ambientLight, "intensity")
-      .min(0)
-      .max(100)
-      .step(0.001)
-      .name("AmbientLight intensity");
-    gui.addColor(ambientLight, "color").name("AmbientLight color");
 
     const spotlight = new THREE.SpotLight(
       "#e600e2",
@@ -122,60 +103,6 @@ export const Canvas = (props: Props) => {
     scene.add(spotlight2);
     scene.add(spotlight2.target);
 
-    gui
-      .add(spotlight, "intensity")
-      .min(0)
-      .max(50)
-      .step(0.001)
-      .name("Spotlight 1 intensity");
-    gui
-      .add(spotlight2, "intensity")
-      .min(0)
-      .max(50)
-      .step(0.001)
-      .name("Spotlight 2 intensity");
-
-    gui.addColor(spotlight, "color").name("Spotlight 1 color");
-    gui.addColor(spotlight2, "color").name("Spotlight 2 color");
-
-    gui
-      .add(spotlight.position, "x")
-      .min(-15)
-      .max(15)
-      .step(0.01)
-      .name("Spotlight 1 X");
-    gui
-      .add(spotlight.position, "y")
-      .min(-2)
-      .max(15)
-      .step(0.01)
-      .name("Spotlight 1 Y");
-    gui
-      .add(spotlight.position, "z")
-      .min(-15)
-      .max(15)
-      .step(0.01)
-      .name("Spotlight 1 Z");
-
-    gui
-      .add(spotlight2.position, "x")
-      .min(-15)
-      .max(15)
-      .step(0.01)
-      .name("Spotlight 2 X");
-    gui
-      .add(spotlight2.position, "y")
-      .min(-2)
-      .max(15)
-      .step(0.01)
-      .name("Spotlight 2 Y");
-    gui
-      .add(spotlight2.position, "z")
-      .min(-15)
-      .max(15)
-      .step(0.01)
-      .name("Spotlight 2 Z");
-
     // Sizes
     const sizes = {
       width: window.innerWidth,
@@ -195,28 +122,6 @@ export const Canvas = (props: Props) => {
     camera.position.x = 0;
     camera.position.y = 0.12;
     camera.position.z = 1.1;
-
-    gui
-      .add(camera, "near")
-      .min(0)
-      .max(10)
-      .step(0.1)
-      .onChange(() => camera.updateProjectionMatrix())
-      .name("Camera Near");
-    gui
-      .add(camera, "far")
-      .min(0)
-      .max(100)
-      .step(0.1)
-      .onChange(() => camera.updateProjectionMatrix())
-      .name("Camera Far");
-    gui
-      .add(camera, "fov")
-      .min(0)
-      .max(180)
-      .step(0.1)
-      .onChange(() => camera.updateProjectionMatrix())
-      .name("Camera FOV");
     scene.add(camera);
 
     // Controls
@@ -241,12 +146,6 @@ export const Canvas = (props: Props) => {
 
     const rgbShiftPass = new ShaderPass(RGBShiftShader);
     rgbShiftPass.uniforms["amount"].value = 0.00238;
-    gui
-      .add(rgbShiftPass.uniforms["amount"], "value")
-      .min(0)
-      .max(0.01)
-      .step(0.00001)
-      .name("RGBShift intensity");
     effectComposer.addPass(rgbShiftPass);
     const gammaCorrectionPass = new ShaderPass(GammaCorrectionShader);
     effectComposer.addPass(gammaCorrectionPass);
@@ -258,15 +157,6 @@ export const Canvas = (props: Props) => {
     //@ts-ignore
     const bloomPass = new UnrealBloomPass();
     bloomPass.strength = bloomParams.strength;
-
-    gui
-      .add(bloomParams, "strength", 0.0, 3.0)
-      //@ts-ignore
-      .onChange((value) => {
-        bloomPass.strength = Number(value);
-      })
-      .name("Bloom Strength");
-
     effectComposer.addPass(bloomPass);
 
     // Resize handler
