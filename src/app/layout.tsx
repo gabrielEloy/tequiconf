@@ -6,10 +6,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Tequiconf",
-  description: "Os Melhores profissionais de tecnologia reunidos em curitiba, com uma missão: Acelerar sua carreira!",
+  description:
+    "Os Melhores profissionais de tecnologia reunidos em curitiba, com uma missão: Acelerar sua carreira!",
   openGraph: {
     title: "Tequiconf",
-    description: "Os Melhores profissionais de tecnologia reunidos em curitiba, com uma missão: Acelerar sua carreira!",
+    description:
+      "Os Melhores profissionais de tecnologia reunidos em curitiba, com uma missão: Acelerar sua carreira!",
+    images: ["/open-graph.png"],
   },
   twitter: {
     card: "summary_large_image",
