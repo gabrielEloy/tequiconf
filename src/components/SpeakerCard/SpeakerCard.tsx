@@ -22,8 +22,8 @@ export const SpeakerCard = ({ speakerName, talk, img }: ISpeakerCard) => {
       <div className={styles["speaker-picture-container"]}>
         <img
           className={styles["speaker-picture"]}
-          src={img.src}
-          alt={img.alt}
+          src={img?.src}
+          alt={img?.alt}
         />
         <div className={styles["company-description"]}>
           <RGBSplitText>{speakerName}</RGBSplitText>
@@ -31,10 +31,10 @@ export const SpeakerCard = ({ speakerName, talk, img }: ISpeakerCard) => {
       </div>
       <div className={styles["card-content"]}>
         <RGBSplitText style={{ fontSize: 12 }} displacement={0}>
-          {talk.title}
+          {talk?.title}
         </RGBSplitText>
         <div className={styles["card-content-text"]}>
-          <Text style={{ marginTop: 15 }}>{talk.description}</Text>
+          <Text style={{ marginTop: 15 }}>{talk?.description}</Text>
         </div>
         {/* <div className={styles["card-content-social-media"]}>
         <div className={styles['card-content-social-media-icons']}>

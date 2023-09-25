@@ -32,10 +32,12 @@ const Home = () => {
     const pixelNode = new DOMParser().parseFromString(pixelCode, "text/html");
     head?.appendChild(pixelNode.documentElement);
   }, []);
+
+  
   return (
     <div className={styles.main}>
       <div className={styles["hero-container"]}>
-        <Canvas />
+        {/* <Canvas /> */}
         <Hero />
       </div>
       <div className={styles["speakers"]}>

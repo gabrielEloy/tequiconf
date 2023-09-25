@@ -15,52 +15,86 @@ const speakers = [
     },
     img: { src: "erick-wendel.jpeg", alt: "Erick Wendel" },
   },
+  {
+    isFemale: false,
+    name: "Bruno Patinho",
+    talk: {
+      description: "Finalmente é possível? Mobile e Web em uma única codebase",
+      title: "Palestra:",
+    },
+    img: { src: "patinho.jpeg", alt: "Bruno Patinho" },
+  },
+  {
+    isFemale: true,
+    name: "????????",
+    talk: {
+      description: "????????",
+      title: "Palestra:",
+    },
+    img: true
+      ? {
+          src: "a-confirmar-mulher.png",
+          alt: "Palestrante Mulher não confirmada",
+        }
+      : {
+          src: "a-confirmar-homem.png",
+          alt: "Palestrante Homem não confirmado",
+        },
+  },
+  {
+    isFemale: false,
+    name: "????????",
+    talk: {
+      description: "????????",
+      title: "Palestra:",
+    },
+    img: false
+      ? {
+          src: "a-confirmar-mulher.png",
+          alt: "Palestrante Mulher não confirmada",
+        }
+      : {
+          src: "a-confirmar-homem.png",
+          alt: "Palestrante Homem não confirmado",
+        },
+  },
+  {
+    isFemale: true,
+    name: "????????",
+    talk: {
+      description: "????????",
+      title: "Palestra:",
+    },
+    img: true
+      ? {
+          src: "a-confirmar-mulher.png",
+          alt: "Palestrante Mulher não confirmada",
+        }
+      : {
+          src: "a-confirmar-homem.png",
+          alt: "Palestrante Homem não confirmado",
+        },
+  },
+  {
+    isFemale: true,
+    name: "????????",
+    talk: {
+      description: "????????",
+      title: "Palestra:",
+    },
+    img: true
+      ? {
+          src: "a-confirmar-mulher.png",
+          alt: "Palestrante Mulher não confirmada",
+        }
+      : {
+          src: "a-confirmar-homem.png",
+          alt: "Palestrante Homem não confirmado",
+        },
+  },
 ];
 
 export const Speakers = (props: Props) => {
-  const speakerCards = useMemo(() => {
-    const speakerCards = [...speakers];
-    let womenSpeakers = 3;
-
-    const missingSpeakers = new Array(6 - speakerCards.length)
-      .fill(null)
-      .map(() => {
-        const speaker = {
-          isFemale: womenSpeakers > 0,
-          name: "????????",
-          talk: {
-            description: "????????",
-            title: "Palestra:",
-          },
-          img:
-            womenSpeakers > 0
-              ? {
-                  src: "a-confirmar-mulher.png",
-                  alt: "Palestrante Mulher não confirmada",
-                }
-              : {
-                  src: "a-confirmar-homem.png",
-                  alt: "Palestrante Homem não confirmado",
-                },
-        };
-        womenSpeakers--;
-        return speaker;
-      });
-
-    const unorderedSpeakers = speakerCards.concat(missingSpeakers);
-
-    const females = unorderedSpeakers.filter((obj) => obj.isFemale);
-    const males = unorderedSpeakers.filter((obj) => !obj.isFemale);
-
-    const resultArray = [];
-    for (let i = 0; i < females.length; i++) {
-      resultArray.push(males[i]);
-      resultArray.push(females[i]);
-    }
-
-    return resultArray;
-  }, []);
-
   return (
     <div className={styles["info-wrapper"]}>
       <RGBSplitText displacement={1.2} className={styles["title"]}>
@@ -68,11 +102,11 @@ export const Speakers = (props: Props) => {
       </RGBSplitText>
 
       <div className={styles["speakers-container"]}>
-        {speakerCards.map((speaker, idx) => (
+        {speakers.map((speaker, idx) => (
           <SpeakerCard
-            speakerName={speaker.name}
-            talk={speaker.talk}
-            img={speaker.img}
+            speakerName={speaker?.name}
+            talk={speaker?.talk}
+            img={speaker?.img}
             key={idx}
           />
         ))}
