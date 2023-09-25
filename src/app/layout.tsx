@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contadev",
-    description: "Contadev é uma contabilidade pensada 100% pra você que é dev",
+    title: "Tequiconf",
+    description: "Os Melhores profissionais de tecnologia reunidos em curitiba, com uma missão: Acelerar sua carreira!",
   },
 };
 
