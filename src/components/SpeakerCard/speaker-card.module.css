@@ -1,0 +1,86 @@
+.card-wrapper {
+  width: 500px;
+  height: 280px;
+  background: linear-gradient(45deg, #332092, #cc41b3);
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+  padding: 20px;
+  border: solid 1px rgb(37, 37, 220);
+}
+
+.speaker-picture-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-picture {
+  border-radius: 5px;
+  height: 200px;
+}
+
+.company-description {
+  height: 60px;
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  background: black;
+}
+
+.card-content {
+  text-align: center;
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .card-wrapper {
+    width: 70%;
+    padding: 20px 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.card-content-text {
+  height: 100%;
+  /* align-items: flex-start; */
+  align-items: center;
+  display: flex;
+  padding-bottom: 20px;
+  z-index: 2;
+  flex: 1;
+}
+
+.card-content-social-media {
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-content-social-media-icons {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card-content-social-media-icons svg {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.card-content-social-media-icons svg:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}

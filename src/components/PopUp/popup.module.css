@@ -1,5 +1,4 @@
 .popup-window {
-  min-width: 40vw;
   max-width: 60vw;
   /* min-height: 400px; */
   outline: solid 4px #ffffff;
@@ -12,6 +11,10 @@
   width: 100%;
   z-index: 2;
   background: linear-gradient(90deg, #fb76ed, #8218ff);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .popup-window-body {

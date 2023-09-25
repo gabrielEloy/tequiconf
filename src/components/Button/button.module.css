@@ -58,3 +58,7 @@
   opacity: 0;
   cursor: pointer;
 }
+
+.custom-button:disabled:after {
+  cursor: default;
+}

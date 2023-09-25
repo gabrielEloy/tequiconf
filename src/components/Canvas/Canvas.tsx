@@ -2,7 +2,7 @@
 
 import * as dat from "lil-gui";
 import * as THREE from "three";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useLayoutEffect } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
@@ -17,7 +17,8 @@ type Props = {};
 export const Canvas = (props: Props) => {
   const mountRef = useRef(null);
 
-  useEffect(() => {
+  console.log({ mountRef });
+  useLayoutEffect(() => {
     /**
      * Base
      */
@@ -178,7 +179,10 @@ export const Canvas = (props: Props) => {
     // Sizes
     const sizes = {
       width: window.innerWidth,
-      height: window.innerHeight,
+      height:
+      //@ts-ignore
+        mountRef.current?.parentElement?.getBoundingClientRect?.()?.height ||
+        window.innerHeight,
     };
 
     // Base camera
@@ -306,5 +310,11 @@ export const Canvas = (props: Props) => {
 
     tick();
   }, []);
-  return <canvas ref={mountRef} className="webgl"></canvas>;
+  return (
+    <canvas
+      style={{ height: "100%", padding: 0, margin: 0 }}
+      ref={mountRef}
+      className="webgl"
+    ></canvas>
+  );
 };

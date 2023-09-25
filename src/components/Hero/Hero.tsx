@@ -9,10 +9,20 @@ import { Button } from "../Button/Button";
 type Props = {};
 
 const Hero = (props: Props) => {
+  const scrollToTickets = () => {
+    const ticketsDiv = document.getElementById("buy-tickets");
+    ticketsDiv?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <div className={styles["hero-content"]}>
       <div className={styles["hero"]}>
-        <img className={styles["statue-man"]} src="/statue-man.png" />
+        <img
+          className={styles["statue-man"]}
+          src="/statue-man.png"
+          alt="Greek god"
+        />
         <div className={styles["popup-window"]}>
           <PopUp>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -36,27 +46,29 @@ const Hero = (props: Props) => {
         <RGBSplitText
           style={{
             marginTop: 35,
-            fontSize: 25,
           }}
+          className={styles["date-text"]}
         >
           11/11/2023
         </RGBSplitText>
-        <RGBSplitText
-          style={{
-            cursor: "pointer",
-            marginTop: 15,
-            fontSize: 12,
-            textDecoration: "underline",
-          }}
-          onClick={() => alert("test")}
+        <a
+          target="_blank"
+          href="https://www.google.com/search?q=fae+business+school&oq=FAE+bu&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDINCAcQLhivARjHARiABNIBCDEyMzZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
+          rel="noopener noreferrer"
         >
-          FAE Centro Universitário - Curitiba
-        </RGBSplitText>
+          <RGBSplitText
+            style={{
+              cursor: "pointer",
+              marginTop: 15,
+              textDecoration: "underline",
+            }}
+            className={styles["location-text"]}
+          >
+            FAE Centro Universitário
+          </RGBSplitText>
+        </a>
 
-        <Button
-          style={{ marginTop: 35 }}
-          onClick={() => alert("garantiu a vaga")}
-        >
+        <Button style={{ marginTop: 35 }} onClick={scrollToTickets}>
           <RGBSplitText style={{ cursor: "pointer" }}>
             Garanta sua vaga
           </RGBSplitText>

@@ -1,0 +1,25 @@
+.buy-ticket-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.4rem 0 3rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.expired {
+  filter: brightness(20%);
+}
+
+.sold-out-banner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+
+.sold-out-text{
+  font-size: 32px;
+}
