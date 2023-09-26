@@ -35,7 +35,7 @@ const BuyTicket = ({ title, price, expired = false, soldOut }: IBuyTicket) => {
             </RGBSplitText>
           </Button>
         ) : (
-          <a href="https://hotmart.com/pt-br/marketplace/produtos/tequiconf/P86883358Q">
+          <a href="https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780">
             <Button disabled={expired}>
               <RGBSplitText
                 style={!expired ? { cursor: "pointer" } : undefined}

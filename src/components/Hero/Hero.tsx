@@ -42,11 +42,11 @@ const Hero = (props: Props) => {
 
         <img className={styles["statue-woman"]} src="/statue-woman.png" />
         <RGBSplitText className={styles["date-text"]}>11/11/2023</RGBSplitText>
-        <a
+        {/* <a
           target="_blank"
           href="https://www.google.com/search?q=fae+business+school&oq=FAE+bu&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDINCAcQLhivARjHARiABNIBCDEyMzZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
           rel="noopener noreferrer"
-        >
+        > */}
           <RGBSplitText
             style={{
               cursor: "pointer",
@@ -57,7 +57,7 @@ const Hero = (props: Props) => {
           >
             FAE Centro Universitário
           </RGBSplitText>
-        </a>
+        {/* </a> */}
 
         <Button
           style={{ marginTop: 35 }}
