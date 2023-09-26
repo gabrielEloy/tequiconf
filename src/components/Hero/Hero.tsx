@@ -21,34 +21,27 @@ const Hero = (props: Props) => {
           src="/statue-man.png"
           alt="Greek god"
         />
-        <div className={styles["popup-window"]}>
-          <PopUp>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              style={{ marginTop: 30, maxWidth: "120%" }}
-              src="/tequiconf-logo.png"
-              alt="Tequiconf"
-            />
-            <RGBSplitText style={{ marginTop: 40 }}>
-              Os melhores profissionais de tech
-            </RGBSplitText>
-            <RGBSplitText style={{ marginTop: 20 }}>
-              Reunidos em curitiba, com 1 missão
-            </RGBSplitText>
-            <RGBSplitText style={{ marginTop: 50 }}>
-              Acelerar a sua carreira!
-            </RGBSplitText>
-          </PopUp>
-        </div>
+
+        <PopUp className={styles["hero-popup-window"]}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            style={{ marginTop: 30, maxWidth: "120%" }}
+            src="/tequiconf-logo.png"
+            alt="Tequiconf"
+          />
+          <RGBSplitText className={styles["text1"]}>
+            Os melhores profissionais de tech
+          </RGBSplitText>
+          <RGBSplitText className={styles["text2"]}>
+            Reunidos em curitiba, com 1 missão
+          </RGBSplitText>
+          <RGBSplitText className={styles["text3"]}>
+            Acelerar a sua carreira!
+          </RGBSplitText>
+        </PopUp>
+
         <img className={styles["statue-woman"]} src="/statue-woman.png" />
-        <RGBSplitText
-          style={{
-            marginTop: 35,
-          }}
-          className={styles["date-text"]}
-        >
-          11/11/2023
-        </RGBSplitText>
+        <RGBSplitText className={styles["date-text"]}>11/11/2023</RGBSplitText>
         <a
           target="_blank"
           href="https://www.google.com/search?q=fae+business+school&oq=FAE+bu&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDINCAcQLhivARjHARiABNIBCDEyMzZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
@@ -66,7 +59,10 @@ const Hero = (props: Props) => {
           </RGBSplitText>
         </a>
 
-        <Button style={{ marginTop: 35 }} onClick={scrollToTickets}>
+        <Button
+          style={{ marginTop: 35 }}
+          onClick={scrollToTickets}
+        >
           <RGBSplitText style={{ cursor: "pointer" }}>
             Garanta sua vaga
           </RGBSplitText>
