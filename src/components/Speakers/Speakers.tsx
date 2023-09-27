@@ -7,7 +7,6 @@ type Props = {};
 
 const speakers = [
   {
-    isFemale: false,
     name: "Erick Wendel",
     talk: {
       description: "Usando Machine learning dentro do navegador",
@@ -16,7 +15,17 @@ const speakers = [
     img: { src: "erick-wendel.jpeg", alt: "Erick Wendel" },
   },
   {
-    isFemale: false,
+    name: "Adolfo Neto",
+    talk: {
+      description: "Uma introdução a Elixir",
+      title: "Palestra:",
+    },
+    img: {
+      src: "AdolfoNeto.jpeg",
+      alt: "Adolfo Neto",
+    },
+  },
+  {
     name: "Bruno Patinho",
     talk: {
       description: "Finalmente é possível? Mobile e Web em uma única codebase",
@@ -25,24 +34,6 @@ const speakers = [
     img: { src: "patinho.jpeg", alt: "Bruno Patinho" },
   },
   {
-    isFemale: true,
-    name: "????????",
-    talk: {
-      description: "????????",
-      title: "Palestra:",
-    },
-    img: true
-      ? {
-          src: "a-confirmar-mulher.png",
-          alt: "Palestrante Mulher não confirmada",
-        }
-      : {
-          src: "a-confirmar-homem.png",
-          alt: "Palestrante Homem não confirmado",
-        },
-  },
-  {
-    isFemale: false,
     name: "????????",
     talk: {
       description: "????????",
@@ -59,7 +50,6 @@ const speakers = [
         },
   },
   {
-    isFemale: true,
     name: "????????",
     talk: {
       description: "????????",
@@ -76,7 +66,6 @@ const speakers = [
         },
   },
   {
-    isFemale: true,
     name: "????????",
     talk: {
       description: "????????",
