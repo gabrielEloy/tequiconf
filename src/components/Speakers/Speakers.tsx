@@ -34,20 +34,15 @@ const speakers = [
     img: { src: "patinho.jpeg", alt: "Bruno Patinho" },
   },
   {
-    name: "????????",
+    name: "Tech Anne",
     talk: {
       description: "????????",
       title: "Palestra:",
     },
-    img: false
-      ? {
-          src: "a-confirmar-mulher.png",
-          alt: "Palestrante Mulher não confirmada",
-        }
-      : {
-          src: "a-confirmar-homem.png",
-          alt: "Palestrante Homem não confirmado",
-        },
+    img: {
+      src: "Anne.JPG",
+      alt: "Tech Anne",
+    }
   },
   {
     name: "????????",
