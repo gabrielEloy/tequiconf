@@ -71,7 +71,7 @@ const Home = () => {
     <div className={styles.main}>
       <Toaster />
       <div className={styles["hero-container"]}>
-        {/* <Canvas /> */}
+        <Canvas />
         <Hero />
       </div>
       <div className={styles["speakers"]}>
