@@ -63,8 +63,14 @@ const Home = () => {
   const hasShowedToast = useRef(false);
 
   useEffect(() => {
+    const couponsList: Record<string,string> = {
+      'BRUNO50': '200,00',
+      'VICTOR50': '200,00',
+    }
+    
+
     const coupon = getQueryParams()?.cupom;
-    if (coupon && !hasShowedToast.current) {
+    if (coupon && !hasShowedToast.current && couponsList[coupon]) {
       toast(`Cupom '${coupon}' aplicado!`);
       hasShowedToast.current = true;
     }
