@@ -10,26 +10,29 @@ import { useEffect, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const getQueryParams = () => {
-  var url = window.location.href;
+  if (typeof window !== "undefined") {
+    var url = window.location.href;
 
-  if (!url) return;
+    if (!url) return;
 
-  // Divide a URL em partes, separando pelos caracteres '?' e '&'
-  var params = url.split("?")[1]?.split("&");
+    // Divide a URL em partes, separando pelos caracteres '?' e '&'
+    var params = url.split("?")[1]?.split("&");
 
-  if (!params || !params.length) return;
+    if (!params || !params.length) return;
 
-  var queryParams: any = {};
+    var queryParams: any = {};
 
-  // Itera sobre os parâmetros da consulta
-  for (var i = 0; i < params.length; i++) {
-    var param = params[i].split("=");
-    var paramName = decodeURIComponent(param[0]);
-    var paramValue = decodeURIComponent(param[1]);
-    queryParams[paramName] = paramValue;
+    // Itera sobre os parâmetros da consulta
+    for (var i = 0; i < params.length; i++) {
+      var param = params[i].split("=");
+      var paramName = decodeURIComponent(param[0]);
+      var paramValue = decodeURIComponent(param[1]);
+      queryParams[paramName] = paramValue;
+    }
+
+    return queryParams;
   }
-
-  return queryParams;
+  return {};
 };
 
 const Home = () => {
@@ -57,13 +60,13 @@ const Home = () => {
     head?.appendChild(pixelNode.documentElement);
   }, []);
 
-  const hasShowedToast = useRef(false)
+  const hasShowedToast = useRef(false);
 
   useEffect(() => {
     const coupon = getQueryParams()?.cupom;
     if (coupon && !hasShowedToast.current) {
       toast(`Cupom '${coupon}' aplicado!`);
-      hasShowedToast.current = true
+      hasShowedToast.current = true;
     }
   }, []);
 
