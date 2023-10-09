@@ -6,7 +6,31 @@ import { Canvas } from "@/components/Canvas/Canvas";
 import { Speakers } from "@/components/Speakers/Speakers";
 import Info from "@/components/Info/Info";
 import { Tickets } from "@/components/Tickets/Tickets";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
+const getQueryParams = () => {
+  var url = window.location.href;
+
+  if (!url) return;
+
+  // Divide a URL em partes, separando pelos caracteres '?' e '&'
+  var params = url.split("?")[1]?.split("&");
+
+  if (!params || !params.length) return;
+
+  var queryParams: any = {};
+
+  // Itera sobre os parâmetros da consulta
+  for (var i = 0; i < params.length; i++) {
+    var param = params[i].split("=");
+    var paramName = decodeURIComponent(param[0]);
+    var paramValue = decodeURIComponent(param[1]);
+    queryParams[paramName] = paramValue;
+  }
+
+  return queryParams;
+};
 
 const Home = () => {
   useEffect(() => {
@@ -33,17 +57,27 @@ const Home = () => {
     head?.appendChild(pixelNode.documentElement);
   }, []);
 
+  const hasShowedToast = useRef(false)
+
+  useEffect(() => {
+    const coupon = getQueryParams()?.cupom;
+    if (coupon && !hasShowedToast.current) {
+      toast(`Cupom '${coupon}' aplicado!`);
+      hasShowedToast.current = true
+    }
+  }, []);
 
   return (
     <div className={styles.main}>
+      <Toaster />
       <div className={styles["hero-container"]}>
-        <Canvas />
+        {/* <Canvas /> */}
         <Hero />
       </div>
       <div className={styles["speakers"]}>
         <Speakers />
         <Info />
-        <Tickets />
+        <Tickets coupon={getQueryParams()?.cupom} />
       </div>
     </div>
   );

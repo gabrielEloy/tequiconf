@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Document() {
   return (
@@ -17,6 +17,7 @@ export default function Document() {
         />
       </Head>
       <body>
+        <Toaster />
         <Main />
         <NextScript />
       </body>

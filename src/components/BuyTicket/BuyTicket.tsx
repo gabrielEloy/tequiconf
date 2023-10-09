@@ -9,10 +9,13 @@ interface IBuyTicket {
   price: string;
   expired?: boolean;
   soldOut?: boolean;
+  coupon?: string;
 }
 
-const BuyTicket = ({ title, price, expired = false, soldOut }: IBuyTicket) => {
+const BuyTicket = ({ title, price, expired = false, soldOut, coupon }: IBuyTicket) => {
   const popUpClassName = expired ? styles["expired"] : "";
+
+  const hotMartLink = coupon ? `https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780&offDiscount=${coupon}` : 'https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780'
 
   return (
     <div className={styles["buy-ticket-wrapper"]}>
@@ -35,7 +38,7 @@ const BuyTicket = ({ title, price, expired = false, soldOut }: IBuyTicket) => {
             </RGBSplitText>
           </Button>
         ) : (
-          <a href="https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780">
+          <a href={hotMartLink}>
             <Button disabled={expired}>
               <RGBSplitText
                 style={!expired ? { cursor: "pointer" } : undefined}

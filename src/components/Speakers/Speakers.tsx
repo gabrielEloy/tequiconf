@@ -36,45 +36,13 @@ const speakers = [
   {
     name: "Tech Anne",
     talk: {
-      description: "????????",
+      description: "Como conquistar seus objetivos na área de TI",
       title: "Palestra:",
     },
     img: {
       src: "Anne.JPG",
       alt: "Tech Anne",
     }
-  },
-  {
-    name: "????????",
-    talk: {
-      description: "????????",
-      title: "Palestra:",
-    },
-    img: true
-      ? {
-          src: "a-confirmar-mulher.png",
-          alt: "Palestrante Mulher não confirmada",
-        }
-      : {
-          src: "a-confirmar-homem.png",
-          alt: "Palestrante Homem não confirmado",
-        },
-  },
-  {
-    name: "????????",
-    talk: {
-      description: "????????",
-      title: "Palestra:",
-    },
-    img: true
-      ? {
-          src: "a-confirmar-mulher.png",
-          alt: "Palestrante Mulher não confirmada",
-        }
-      : {
-          src: "a-confirmar-homem.png",
-          alt: "Palestrante Homem não confirmado",
-        },
   },
 ];
 
