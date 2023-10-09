@@ -10,7 +10,8 @@ type Props = {
 
 
 const couponsList = {
-  'BRUNO50': '200,00'
+  'BRUNO50': '200,00',
+  'VICTOR50': '200,00',
 }
 
 export const Tickets = ({ coupon }: Props) => {
