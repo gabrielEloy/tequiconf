@@ -8,20 +8,19 @@ type Props = {
   coupon?: string;
 };
 
-
 const couponsList = {
-  'BRUNO50': '200,00',
-  'VICTOR50': '200,00',
-}
+  BRUNO50: "200,00",
+  VICTOR50: "200,00",
+  JHONATAN50: "200,00",
+};
 
 export const Tickets = ({ coupon }: Props) => {
   const getPriceTicket = () => {
     //@ts-ignore
-    if(couponsList?.[coupon]) return couponsList[coupon]
-    
-    return "250,00"
-  }
+    if (couponsList?.[coupon]) return couponsList[coupon];
 
+    return "250,00";
+  };
 
   return (
     <div id="buy-tickets" className={styles["tickets-container"]}>

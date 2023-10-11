@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import '@coreui/coreui/dist/css/coreui.min.css'
 
 export default function Document() {
   return (

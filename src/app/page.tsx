@@ -8,6 +8,7 @@ import Info from "@/components/Info/Info";
 import { Tickets } from "@/components/Tickets/Tickets";
 import { useEffect, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import QuestionsAndAnswers from "@/components/QuestionsAndAnswers/QuestionsAndAnswers";
 
 const getQueryParams = () => {
   if (typeof window !== "undefined") {
@@ -63,11 +64,11 @@ const Home = () => {
   const hasShowedToast = useRef(false);
 
   useEffect(() => {
-    const couponsList: Record<string,string> = {
-      'BRUNO50': '200,00',
-      'VICTOR50': '200,00',
-    }
-    
+    const couponsList: Record<string, string> = {
+      BRUNO50: "200,00",
+      VICTOR50: "200,00",
+      JHONATAN50: "200,00",
+    };
 
     const coupon = getQueryParams()?.cupom;
     if (coupon && !hasShowedToast.current && couponsList[coupon]) {
@@ -80,13 +81,14 @@ const Home = () => {
     <div className={styles.main}>
       <Toaster />
       <div className={styles["hero-container"]}>
-        <Canvas />
+        {/* <Canvas /> */}
         <Hero />
       </div>
       <div className={styles["speakers"]}>
         <Speakers />
         <Info />
         <Tickets coupon={getQueryParams()?.cupom} />
+        <QuestionsAndAnswers />
       </div>
     </div>
   );

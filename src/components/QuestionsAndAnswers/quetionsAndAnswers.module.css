@@ -1,0 +1,22 @@
+.container {
+  padding: 10px 0;
+  z-index: 99;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.accordion {
+  width: 70%;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 20px;
+  }
+}
