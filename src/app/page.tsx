@@ -9,6 +9,7 @@ import { Tickets } from "@/components/Tickets/Tickets";
 import { useEffect, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import QuestionsAndAnswers from "@/components/QuestionsAndAnswers/QuestionsAndAnswers";
+import Sponsors from "@/components/Sponsors/Sponsors";
 
 const getQueryParams = () => {
   if (typeof window !== "undefined") {
@@ -89,6 +90,7 @@ const Home = () => {
         <Info />
         <Tickets coupon={getQueryParams()?.cupom} />
         <QuestionsAndAnswers />
+        <Sponsors />
       </div>
     </div>
   );
