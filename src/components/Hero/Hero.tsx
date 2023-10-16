@@ -63,7 +63,7 @@ const Hero = (props: Props) => {
           style={{ marginTop: 35 }}
           onClick={scrollToTickets}
         >
-          <RGBSplitText style={{ cursor: "pointer" }}>
+          <RGBSplitText style={{ cursor: "pointer"}}>
             Garanta sua vaga
           </RGBSplitText>
         </Button>

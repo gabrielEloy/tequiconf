@@ -69,6 +69,10 @@ const Home = () => {
       BRUNO50: "200,00",
       VICTOR50: "200,00",
       JHONATAN50: "200,00",
+      KIPPER20: "200,00",
+      TECHANNE20: "200,00",
+      ADOLFO20: "200,00",
+      ERICKWENDEL20: "200,00",
     };
 
     const coupon = getQueryParams()?.cupom;
@@ -82,7 +86,7 @@ const Home = () => {
     <div className={styles.main}>
       <Toaster />
       <div className={styles["hero-container"]}>
-        <Canvas />
+        {/* <Canvas /> */}
         <Hero />
       </div>
       <div className={styles["speakers"]}>
