@@ -26,12 +26,15 @@ const speakers = [
     },
   },
   {
-    name: "Bruno Patinho",
+    name: "Fernanda Kipper",
     talk: {
-      description: "Finalmente é possível? Mobile e Web em uma única codebase",
+      description: "Desvendando IA Generativas como Chat GPT: a visão de um Desenvolvedor Web",
       title: "Palestra:",
     },
-    img: { src: "patinho.jpeg", alt: "Bruno Patinho" },
+    img: {
+      src: "fernanda-contraste-medio.png",
+      alt: "Fernanda Kipper",
+    }
   },
   {
     name: "Tech Anne",
@@ -43,6 +46,14 @@ const speakers = [
       src: "Anne.JPG",
       alt: "Tech Anne",
     }
+  },
+  {
+    name: "Bruno Patinho",
+    talk: {
+      description: "Finalmente é possível? Mobile e Web em uma única codebase",
+      title: "Palestra:",
+    },
+    img: { src: "patinho.jpeg", alt: "Bruno Patinho" },
   },
 ];
 
