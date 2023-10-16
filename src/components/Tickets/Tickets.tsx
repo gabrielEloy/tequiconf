@@ -12,6 +12,10 @@ const couponsList = {
   BRUNO50: "200,00",
   VICTOR50: "200,00",
   JHONATAN50: "200,00",
+  KIPPER20: "200,00",
+  TECHANNE20: "200,00",
+  ADOLFO20: "200,00",
+  ERICKWENDEL20: "200,00",
 };
 
 export const Tickets = ({ coupon }: Props) => {

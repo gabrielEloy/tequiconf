@@ -12,10 +12,20 @@ interface IBuyTicket {
   coupon?: string;
 }
 
-const BuyTicket = ({ title, price, expired = false, soldOut, coupon }: IBuyTicket) => {
+const BuyTicket = ({
+  title,
+  price,
+  expired = false,
+  soldOut,
+  coupon,
+}: IBuyTicket) => {
   const popUpClassName = expired ? styles["expired"] : "";
 
-  const hotMartLink = coupon ? `https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780&offDiscount=${coupon}` : 'https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780'
+  const hotMartLink = coupon
+    ? `https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780&offDiscount=${coupon}`
+    : "https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780";
+
+  console.log({ hotMartLink });
 
   return (
     <div className={styles["buy-ticket-wrapper"]}>
