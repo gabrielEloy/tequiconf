@@ -25,7 +25,7 @@ const BuyTicket = ({
     ? `https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780&offDiscount=${coupon}`
     : "https://pay.hotmart.com/P86883358Q?checkoutMode=10&bid=1695756532780";
 
-  console.log({ hotMartLink });
+
 
   return (
     <div className={styles["buy-ticket-wrapper"]}>
