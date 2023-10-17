@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import QuestionsAndAnswers from "@/components/QuestionsAndAnswers/QuestionsAndAnswers";
 import Sponsors from "@/components/Sponsors/Sponsors";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 const getQueryParams = () => {
   if (typeof window !== "undefined") {
@@ -84,6 +85,17 @@ const Home = () => {
 
   return (
     <div className={styles.main}>
+      <FloatingWhatsApp
+        phoneNumber="+5541987510476"
+        accountName="Tequiconf"
+        allowEsc
+        notification
+        notificationSound
+        placeholder="Compartilhe sua dúvida conosco"
+        chatMessage="Olá! Tem alguma dúvida? Nos mande uma mensagem no whatsapp!"
+        avatar="a-confirmar-mulher.png"
+        statusMessage="Aguardando sua mensagem!"
+      />
       <Toaster />
       <div className={styles["hero-container"]}>
         <Canvas />
